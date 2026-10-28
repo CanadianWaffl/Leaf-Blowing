@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bq71pnq07m36i"]
+
+[ext_resource type="Script" uid="uid://e1jqdbx6hsa2" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://b8r5dygd5po7x" path="res://leaf.gd" id="2_fc0e3"]
+
+[sub_resource type="Animation" id="Animation_e2o6t"]
+resource_name = "Fall"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2443461, 0.0, -0.2443461]
+}
+
+[sub_resource type="Animation" id="Animation_feb5d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc0e3"]
+_data = {
+&"Fall": SubResource("Animation_e2o6t"),
+&"RESET": SubResource("Animation_feb5d")
+}
+
+[node name="Game" type="Node2D" unique_id=984491128]
+script = ExtResource("1_e2o6t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1329450264]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=515806073]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.91, 0.48351336, 0.2366, 1)
+
+[node name="Leaf" type="CharacterBody2D" parent="." unique_id=834861755]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_fc0e3")
+
+[node name="Polygon2D" type="Polygon2D" parent="Leaf" unique_id=2056429464]
+position = Vector2(-8, 0)
+color = Color(0.94, 0.70562667, 0.1128, 1)
+polygon = PackedVector2Array(-96, 0, -96, 8, -72, 8, -56, 24, -16, 32, 72, 16, 112.06389, 4.553173, 120, 0, 112.05342, -4.556156, 72, -16, -16, -32, -56, -24, -72, -8, -96, -8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Leaf" unique_id=1242584708]
+libraries/ = SubResource("AnimationLibrary_fc0e3")
