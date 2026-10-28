@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bq71pnq07m36i"]
 
-[ext_resource type="Script" uid="uid://e1jqdbx6hsa2" path="res://Scripts/game.gd" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://b8r5dygd5po7x" path="res://Scripts/leaf.gd" id="2_fc0e3"]
+[ext_resource type="Script" uid="uid://e1jqdbx6hsa2" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://b8r5dygd5po7x" path="res://Scripts/leaf.gd" id="2_wrm1d"]
 
 [sub_resource type="Animation" id="Animation_e2o6t"]
 resource_name = "Fall"
@@ -42,7 +42,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D" unique_id=984491128]
-script = ExtResource("1_e2o6t")
+script = ExtResource("1_qxrlw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1329450264]
 layer = -1
@@ -56,8 +56,7 @@ grow_vertical = 2
 color = Color(0.91, 0.48351336, 0.2366, 1)
 
 [node name="Leaf" type="CharacterBody2D" parent="." unique_id=834861755]
-scale = Vector2(1.5, 1.5)
-script = ExtResource("2_fc0e3")
+script = ExtResource("2_wrm1d")
 
 [node name="Polygon2D" type="Polygon2D" parent="Leaf" unique_id=2056429464]
 position = Vector2(-8, 0)
@@ -66,3 +65,11 @@ polygon = PackedVector2Array(-96, 0, -96, 8, -72, 8, -56, 24, -16, 32, 72, 16, 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Leaf" unique_id=1242584708]
 libraries/ = SubResource("AnimationLibrary_fc0e3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Leaf" unique_id=1528654823]
+
+[node name="Pillar" type="StaticBody2D" parent="." unique_id=1293611743]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pillar" unique_id=896703020]
+
+[node name="Polygon2D" type="Polygon2D" parent="Pillar" unique_id=1446038859]
