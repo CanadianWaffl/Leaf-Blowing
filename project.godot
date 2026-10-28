@@ -13,12 +13,20 @@ config_version=5
 config/name="Leaf blowing"
 run/main_scene="uid://bq71pnq07m36i"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/icon.svg"
 
 [display]
 
 window/size/window_width_override=2304
 window/size/window_height_override=1296
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Scenes/": "orange",
+"res://Scripts/": "yellow"
+}
 
 [input]
 

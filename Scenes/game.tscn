@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bq71pnq07m36i"]
 
-[ext_resource type="Script" uid="uid://e1jqdbx6hsa2" path="res://game.gd" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://b8r5dygd5po7x" path="res://leaf.gd" id="2_fc0e3"]
+[ext_resource type="Script" uid="uid://e1jqdbx6hsa2" path="res://Scripts/game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://b8r5dygd5po7x" path="res://Scripts/leaf.gd" id="2_fc0e3"]
 
 [sub_resource type="Animation" id="Animation_e2o6t"]
 resource_name = "Fall"
